@@ -1,4 +1,4 @@
-function storeInput() {
+ function storeInput() {
     // Initialize an empty array
     const inputArray = [];
     
@@ -17,4 +17,5 @@ function storeInput() {
     
     // Print the array to the console
     console.log(inputArray);
+
   }
