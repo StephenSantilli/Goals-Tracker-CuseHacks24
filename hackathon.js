@@ -13,12 +13,14 @@ function storeInput() {
     $.ajax({
         type: "POST",
         url: "/addGoal",
-        data: {
-            goal: goal
-        }
+        data: JSON.stringify({
+            "name": name,
+            "goal": goal
+        }),
+        contentType: "application/json"
     });
 
-    
+
 
 
 }
