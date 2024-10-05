@@ -1,5 +1,7 @@
 {
-    "Goals": {
-        "test": "sigma"
-    }
+    "Goals": [{
+        "First Name": "Stephen",
+        "Last Name": "Santilli",
+        "Main Goal": "On skib"
+    }]
 }
