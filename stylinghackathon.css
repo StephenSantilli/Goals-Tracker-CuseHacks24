@@ -9,11 +9,14 @@
     text-align: center;
 }
 
-button.cbut{
+.cbut{
+    text-align: CENTER;
+    color: white;
+    border-color: transparent;
     font-family: "caviarDreams";
     width: 100px;
     height: 100px;
-    background: radial-gradient(white,rgb(136, 136, 255));
+    background-color: black;
     border-width: 0px;
     border-radius: 50%;
     font-size: x-large;
@@ -31,7 +34,8 @@ button.cbutstat{
 }
 
 button.cbut:hover{
-    background-color: rgb(127, 128, 204);
+    background-color: white;
+    color: black;
     transition: .11s;
     cursor: pointer;
     width: 130px;
