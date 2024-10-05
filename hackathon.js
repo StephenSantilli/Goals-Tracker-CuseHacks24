@@ -6,7 +6,7 @@ function storeInput(difficulty) {
     const goalInput = document.getElementById("goal");
     const taskInput = document.getElementById("task");
     const dateInput = document.getElementById("Due");
-
+    console.log(dateInput)
     // Get the values of the input elements
     let name = nameInput.value;
     let goal = goalInput.value;
@@ -33,6 +33,7 @@ function storeInput(difficulty) {
 
 function showGoals() {
 
-    window.location = "./goals"
+    const nameInput = document.getElementById("name");
+    window.location = "./goals?name=" + nameInput.value
 
 }
