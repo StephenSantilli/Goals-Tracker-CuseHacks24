@@ -42,6 +42,10 @@ app.get('/', (req, res) => {
 
 })
 
+app.get('/goals', (req, res) => {
+    res.sendFile(path.join(__dirname, "../goalsList.html"));
+})
+
 app.get('/*', (req, res) => {
 
     res.sendFile(path.join(__dirname, ".." + req.path));

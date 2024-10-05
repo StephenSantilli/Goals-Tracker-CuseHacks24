@@ -24,3 +24,9 @@ function storeInput() {
 
 
 }
+
+function showGoals() {
+
+    window.location = "./goals"
+
+}
