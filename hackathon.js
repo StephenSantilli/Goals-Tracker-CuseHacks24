@@ -1,38 +1,24 @@
- function storeInput() {
-    // Initialize an empty array
-    const inputArray = [];
-    
+function storeInput() {
+
+
     // Get the input elements
-    const input1 = document.getElementById("fname");
-    const input2 = document.getElementById("lname");
-    const input3 = document.getElementById("maingoal");
-  
+    const nameInput = document.getElementById("name");
+    const goalInput = document.getElementById("goal");
+
+
     // Get the values of the input elements
-    const value1 = fname.value;
-    const value2 = lname.value;
-    const value3 = maingoal.value;
+    let name = nameInput.value;
+    let goal = goalInput.value;
+
+    $.ajax({
+        type: "POST",
+        url: "/addGoal",
+        data: {
+            goal: goal
+        }
+    });
+
     
-    // Add the values to the array
-    inputArray.push(value1, value2, value3);
-    
-    let goalsList;
-    $.getJSON("./goals.json", (result) => {
-        goalsList = result;
-        console.log(goalsList)
-        result["Goals"].push()
-        let data = {
-            "First Name": value1,
-            "Last Name": value2,
-            "Main Goal": value3
-        };
-        $.ajax({
-            type: "POST",
-            url: "/addGoal",
-            data: data
-          });
-
-    })
 
 
-
-  }
+}

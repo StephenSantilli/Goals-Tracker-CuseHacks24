@@ -9,9 +9,18 @@ let port = 5500;
 
 app.listen(port, "127.0.0.1");
 
-app.post("/addGoal", function (request, response) {
-    let request = request.query.body;
+app.post("/addGoal", function (req, res) {
+    req = req.query.body;
     
+    let goal = {
+        goal: req.goal,
+        priority: 10
+    }
+
+    console.log(goal)
+
+    res.code(200)
+    res.close();
 
 });
 
