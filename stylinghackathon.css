@@ -6,6 +6,7 @@
 .caviar{
     background: linear-gradient(1deg,#ff46a2, #f8cfff);
     font-family: 'CaviarDreams';
+    text-align: center;
 }
 
 input{
