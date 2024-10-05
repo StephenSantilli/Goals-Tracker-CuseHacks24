@@ -1,7 +1,1 @@
-{
-    "Users": [{
-        "First Name": "Stephen",
-        "Last Name": "Santilli",
-        "Main Goal": "On skib"
-    }]
-}
+{"Users":{"stephen":[{"goal":"goall","priority":10}]}}

@@ -9,19 +9,30 @@ let bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.listen(port, "127.0.0.1");
+let goalsList = require('./goals.json')
 
+
+app.listen(port, "127.0.0.1");
+app.use(express.json())
 app.post("/addGoal", urlencodedParser, function (req, res) {
     console.log(req)
     req = req.body;
     let goal = {
-        name: req.name,
         goal: req.goal,
         priority: 10
     }
+    console.log(req.name)
+    console.log(req.goal)
+    if (goalsList.Users.hasOwnProperty(req.name))
+        // goalsList.Users.put(req.name)
+    goalsList.Users[req.name].push(goal);
 
-    console.log(goal)
+    
+    fs.writeFile("./backend/goals.json", JSON.stringify(goalsList), () => {
 
+        console.log("file written")
+
+    })
     res.send(200)
 
 });
