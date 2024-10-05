@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-<body>
+<body class = caviar>
     <div class="progress-container">
         <div class="progress-bar" id="progress-bar">0%</div>
     </div>
@@ -31,10 +31,21 @@
     <button onclick="startProgress()">Start Progress</button>
 
     <script>
+        let totalProgress = 0;
         function updateProgressBar(percent) {
             const progressBar = document.getElementById('progress-bar');
             progressBar.style.width = percent + '%';
             progressBar.textContent = percent + '%';
+        function totalProgress(percent) {
+            totalProgress += percent;
+            return totalProgress;
+        }
+        function setProgress(addedProgress) {
+            updateProgressBar(totalProgress(addedProgress));
+            if(totalProgress(addedProgress) > 100) {
+                updateProgressBar(100);
+            }
+        }
         }
     </script>
 </body>
