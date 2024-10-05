@@ -58,3 +58,20 @@ input{
     background-color: rgb(238, 176, 255);
     border-radius: 10px;
 }
+table{
+    border-bottom: 1px solid #131212;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+  tr{
+    border-bottom: 1px solid #131212;
+    border-collapse: collapse;
+    width: 100%;
+    text-align:center;
+  }
+  td {
+    border-right: solid 1px rgb(13, 9, 9); 
+    border-left: solid 1px rgb(19, 4, 4);
+  }
