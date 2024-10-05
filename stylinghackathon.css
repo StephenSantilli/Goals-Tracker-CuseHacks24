@@ -9,6 +9,18 @@
     text-align: center;
 }
 
+.cbut{
+    font-family: "caviarDreams";
+    width: 100px;
+    height: 100px;
+    background-color: rgb(160, 161, 255);
+    border-width: 0px;
+    border-radius: 50%;
+}
+.cbut:hover{
+    background-color: rgb(127, 128, 204);
+}
+
 input{
     background-color: rgb(238, 176, 255);
     border-radius: 10px;
