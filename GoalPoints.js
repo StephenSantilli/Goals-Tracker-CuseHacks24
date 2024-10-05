@@ -1,4 +1,5 @@
-const buttons = document.getElementByClassName("cbut");
+/* const buttons = document.getElementByClassName("cbut");
+
 
 // looping through all ten buttons
 for (let i = 0; i < buttons.length; i++ ){
@@ -8,4 +9,8 @@ for (let i = 0; i < buttons.length; i++ ){
 }
 
 // assigning point values for button pushed
-const points = buttonValue * 10;
+const points = buttonValue * 10; */
+
+
+const selectedValue = dropdown.value;
+const points = selectedValue * 10
