@@ -9,6 +9,36 @@
     text-align: center;
 }
 
+button.cbut{
+    font-family: "caviarDreams";
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(white,rgb(136, 136, 255));
+    border-width: 0px;
+    border-radius: 50%;
+    font-size: x-large;
+}
+
+button.cbutstat{
+    font-family: "caviarDreams";
+    width: 25%;
+    height: 50%;
+    background: white;
+    border-width: 0px;
+    border-radius: 5%;
+    font-size: x-large;
+    margin-top:10%;
+}
+
+button.cbut:hover{
+    background-color: rgb(127, 128, 204);
+    transition: .11s;
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
+    font-size:200%;
+}
+
 input{
     background-color: rgb(238, 176, 255);
     border-radius: 10px;
