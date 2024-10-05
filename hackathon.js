@@ -19,7 +19,20 @@
     $.getJSON("./goals.json", (result) => {
         goalsList = result;
         console.log(goalsList)
+        result["Goals"].push()
+        let data = {
+            "First Name": value1,
+            "Last Name": value2,
+            "Main Goal": value3
+        };
+        $.ajax({
+            type: "POST",
+            url: "/addGoal",
+            data: data
+          });
+
     })
+
 
 
   }

@@ -14,14 +14,12 @@
         <h1>Goal Tracker App</h1>
         <h2>Welcome</h2>
         <h3>First, write your name and main goal</h3>
-        <form action=";">
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-            <label for="maingoal">Main Goal:</label>
-            <input type="text" id="maingoal" name="maingoal"><br><br>
-            <button class="cbut" type="button" onclick="storeInput()">Submit</button>
+        <form action="/addGoal">
+            <label for="fname">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="maingoal">Goal:</label>
+            <input type="text" id="goal" name="goal"><br><br>
+            <button class="cbut" type="button" onclick="storeInput()">Add to Goals</button>
           </form>
         
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
