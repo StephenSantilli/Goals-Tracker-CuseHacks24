@@ -30,7 +30,8 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
     let task = {
         task: req.task,
         date: req.date,
-        difficulty: req.difficulty
+        difficulty: req.difficulty,
+        done: false
     }
     goal.tasks.push(task);
     console.log(req.name)
@@ -64,7 +65,6 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
 });
 
 app.get('/getGoals/:name', (req, res) => {
-
     
     let name = req.params.name
 
@@ -74,7 +74,36 @@ app.get('/getGoals/:name', (req, res) => {
 
 })
 
+app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
+    
+    let name = req.params.name
+    let goal = req.params.goal
+    let task = req.params.task
+    let done = req.params.done
 
+
+    for (let i = 0; i < goalsList.Users[name].length; i++) {
+        if (goalsList.Users[name][i].goal === goal) {
+            
+            for (let j = 0; j < goalsList.Users[name].length; j++) {
+                if (goalsList.Users[name][i].tasks[j].task === task) {
+                    
+                    goalsList.Users[name][i].tasks[j].done === done;
+
+                    break;
+                }
+            }
+
+            // break;
+        }
+    }
+
+    if (!found)
+        (goalsList.Users[req.name]).push(goal);
+
+    res.send(JSON.stringify(goalsList.Users[name]))
+
+})
 
 app.get('/goals', (req, res) => {
 

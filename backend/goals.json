@@ -7,17 +7,20 @@
                     {
                         "task": "test1",
                         "date": "2024-10-05",
-                        "difficulty": 2
+                        "difficulty": 2,
+                        "done": "false"
                     },
                     {
                         "task": "test2",
                         "date": "2024-10-05",
-                        "difficulty": 3
+                        "difficulty": 3,
+                        "done": "true"
                     },
                     {
                         "task": "test3",
                         "date": "2024-10-05",
-                        "difficulty": 4
+                        "difficulty": 4,
+                        "done": "false"
                     }
                 ]
             }
