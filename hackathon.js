@@ -26,9 +26,6 @@ function storeInput(difficulty) {
         })
     });
 
-
-
-
 }
 
 function showGoals() {

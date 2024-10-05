@@ -1,1 +1,26 @@
-{"Users":{"stephens":[{"goal":"diddle","tasks":[{"task":"234","date":"2024-10-05","difficulty":2},{"task":"365","date":"2024-10-05","difficulty":3},{"task":"365","date":"2024-10-05","difficulty":4},{"task":"365","date":"2024-10-05","difficulty":4}]}]}}
+{
+    "Users": {
+        "stephens": [
+            {
+                "goal": "test",
+                "tasks": [
+                    {
+                        "task": "test1",
+                        "date": "2024-10-05",
+                        "difficulty": 2
+                    },
+                    {
+                        "task": "test2",
+                        "date": "2024-10-05",
+                        "difficulty": 3
+                    },
+                    {
+                        "task": "test3",
+                        "date": "2024-10-05",
+                        "difficulty": 4
+                    }
+                ]
+            }
+        ]
+    }
+}
