@@ -1,5 +1,4 @@
-<html lang="eng"></html>
-    
+<html lang="eng">
     <head>
         <meta charset= "UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +29,10 @@
     </style>
     </head>
     <body class = caviar>
-        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
-            const duration = 15 * 1000,
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() { 
+                const duration = 15 * 1000,
   animationEnd = Date.now() + duration,
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -62,8 +63,9 @@ const interval = setInterval(function() {
     })
   );
 }, 250);
+            }
+            );
         </script>
-        <div class = "centered-text">
         <h1>Congratulations!!!</h1>
         
         <h2 style = "font-size: 28px;">You have completed your goal!</h2>
@@ -72,4 +74,5 @@ const interval = setInterval(function() {
         <a href="hackathon.html" style = "font-size: 24px;">Would you like to start another goal?</a>
         </div>
 
-    </body>
+    </body>        </body>
+    </html>
