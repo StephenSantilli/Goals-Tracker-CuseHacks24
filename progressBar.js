@@ -8,3 +8,4 @@ Total points/num of tasks = point value per task
 
 if 0 tasks are completed --> no progress on task bar
 
+*/

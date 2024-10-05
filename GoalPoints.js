@@ -21,5 +21,5 @@ document.addEventListener("DOMContentLoaded", function() {
         const selectedValue = dropdown.value;
 
     });
+    const points = selectedValue * 10
 });
-const points = selectedValue * 10
