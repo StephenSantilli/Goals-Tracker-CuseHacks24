@@ -1,3 +1,14 @@
-body{
-    background-color: palevioletred ;
+@font-face {
+    font-family: 'CaviarDreams';
+    src: url('CaviarDreams_Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+.caviar{
+    background: linear-gradient(1deg,#ff46a2, #f8cfff);
+    font-family: 'CaviarDreams';
+}
+
+input{
+    background-color: rgb(238, 176, 255);
+    border-radius: 10px;
 }
