@@ -1,11 +1,11 @@
-<html lang="eng">
-    <head>
-        <meta charset= "UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Goal tracker </title>
-        <meta name="website" content="goal tracker website">
-        <link rel="stylesheet" href="stylinghackathon.css" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal tracker</title>
+    <meta name="website" content="goal tracker website">
+    <link rel="stylesheet" href="stylinghackathon.css" />
     <style>
         .caviar {
             font-family: 'Caviar Dreams', sans-serif;
@@ -18,6 +18,7 @@
             justify-content: center; /* Horizontally centers the text */
             align-items: center;     /* Vertically centers the text */
             background-color: #f0f0f0;
+            flex-direction: column;  /* Stack elements vertically */
         }
 
         .centered-text {
@@ -25,54 +26,51 @@
             font-family: 'Caviar Dreams', sans-serif;
             text-align: center;
         }
-        
     </style>
-    </head>
-    <body class = caviar>
-        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() { 
-                const duration = 15 * 1000,
-  animationEnd = Date.now() + duration,
-  defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+</head>
+<body class="caviar">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() { 
+            const duration = 15 * 1000,
+                animationEnd = Date.now() + duration,
+                defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-const interval = setInterval(function() {
-  const timeLeft = animationEnd - Date.now();
-
-  if (timeLeft <= 0) {
-    return clearInterval(interval);
-  }
-
-  const particleCount = 50 * (timeLeft / duration);
-
-  // since particles fall down, start a bit higher than random
-  confetti(
-    Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-    })
-  );
-  confetti(
-    Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-    })
-  );
-}, 250);
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
             }
-            );
-        </script>
-        <h1>Congratulations!!!</h1>
-        
-        <h2 style = "font-size: 28px;">You have completed your goal!</h2>
-        <h2 style = "font-size: 28px;">You should be proud of yourself!</h2>
-        <br>
-        <a href="hackathon.html" style = "font-size: 24px;">Would you like to start another goal?</a>
-        </div>
 
-    </body>        </body>
-    </html>
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+
+                // since particles fall down, start a bit higher than random
+                confetti(
+                    Object.assign({}, defaults, {
+                        particleCount,
+                        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+                    })
+                );
+                confetti(
+                    Object.assign({}, defaults, {
+                        particleCount,
+                        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+                    })
+                );
+            }, 250);
+        });
+    </script>
+    <div class="centered-text">
+        <h1>Congratulations!!!</h1>
+        <h2 style="font-size: 28px;">You have completed your goal!</h2>
+        <h2 style="font-size: 28px;">You should be proud of yourself!</h2>
+        <br>
+        <a href="hackathon.html" style="font-size: 24px;">Would you like to start another goal?</a>
+    </div>
+</body>
+</html>
