@@ -15,7 +15,7 @@ let goalsList = require('./goals.json')
 app.listen(port, "127.0.0.1");
 app.use(express.json())
 app.post("/addGoal", urlencodedParser, function (req, res) {
-    console.log(req)
+
     req = req.body;
     let goal = {
         goal: req.goal,
@@ -23,6 +23,9 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
     }
     console.log(req.name)
     console.log(req.goal)
+    console.log(req.task)
+    console.log(req.date)
+    console.log(req.difficulty)
     if (goalsList.Users.hasOwnProperty(req.name))
         // goalsList.Users.put(req.name)
     goalsList.Users[req.name].push(goal);

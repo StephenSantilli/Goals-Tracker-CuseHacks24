@@ -1,9 +1,1 @@
-{
-    "Users": {
-        "stephen": [
-            {
-                "goal": "goall"
-            }
-        ]
-    }
-}
+{"Users":{"stephen":[{"goal":"goall","tasks":[{"task":"g","difficulty":2,"date":"2024-10-5"}]},{"goal":"s","priority":10},{"goal":"s","priority":10}]}}
