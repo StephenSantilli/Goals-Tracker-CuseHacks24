@@ -1,0 +1,8 @@
+- Front end of the website - likely done by ethan
+- Back end
+user input
+user goal difficulty rating
+goal completion
+point assignment
+progress bar
+total goal completion rewards
