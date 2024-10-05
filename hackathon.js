@@ -15,7 +15,11 @@
     // Add the values to the array
     inputArray.push(value1, value2, value3);
     
-    // Print the array to the console
-    console.log(inputArray);
+    let goalsList;
+    $.getJSON("./goals.json", (result) => {
+        goalsList = result;
+        console.log(goalsList)
+    })
+
 
   }
