@@ -3,8 +3,8 @@
     src: url('CaviarDreams_Bold.ttf') format('truetype');
     font-weight: bold;
 }
-body{
-    background-color: palevioletred ;
+.caviar{
+    background: linear-gradient(1deg,#ff46a2, #f8cfff);
     font-family: 'CaviarDreams';
 }
 
