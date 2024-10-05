@@ -1,8 +1,8 @@
-var express = require("express"),
+let express = require("express"),
     app = express();
-var fs = require('fs');
+let fs = require('fs');
 let path = require('path')
-var port = 5500;
+let port = 5500;
 
 // app.use(express.static(__dirname + '/public'));
 
@@ -10,8 +10,9 @@ var port = 5500;
 app.listen(port, "127.0.0.1");
 
 app.post("/addGoal", function (request, response) {
-    var request = request.query.body;
-    console.log(request);
+    let request = request.query.body;
+    
+
 });
 
 app.get('/', (req, res) => {
