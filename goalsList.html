@@ -7,7 +7,10 @@
         <title>Goal tracker </title>
         <meta name="website" content="goal tracker website">
         <link rel="stylesheet" href="stylinghackathon.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="caviar">
 
@@ -17,6 +20,49 @@
         
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
           <script  src="./goalsList.js"></script>
-
+          <style>
+            .progress-container {
+                width: 100%;
+                background-color: #f3f3f3;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+    
+            .progress-bar {
+                width: 0%;
+                height: 30px;
+                background-color: #4caf50;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+                border-radius: 8px;
+            }
+        </style>
+    
+   
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">0%</div>
+        </div>
+    
+        <button onclick="startProgress()">Start Progress</button>
+    
+        <script>
+            let totalProgress = 0;
+            function updateProgressBar(percent) {
+                const progressBar = document.getElementById('progress-bar');
+                progressBar.style.width = percent + '%';
+                progressBar.textContent = percent + '%';
+            function totalProgress(percent) {
+                totalProgress += percent;
+                return totalProgress;
+            }
+            function setProgress(addedProgress) {
+                updateProgressBar(totalProgress(addedProgress));
+                if(totalProgress(addedProgress) > 100) {
+                    updateProgressBar(100);
+                }
+            }
+            }
+        </script>
         </body>
 </html>
