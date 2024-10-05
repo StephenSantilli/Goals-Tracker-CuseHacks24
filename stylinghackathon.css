@@ -21,7 +21,18 @@
     border-radius: 50%;
     font-size: x-large;
 }
-
+.cbut2{
+    text-align: CENTER;
+    color: white;
+    border-color: transparent;
+    font-family: "caviarDreams";
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-width: 0px;
+    border-radius: 50%;
+    font-size: x-large;
+}
 button.cbutstat{
     font-family: "caviarDreams";
     width: 75%;
