@@ -13,13 +13,14 @@ button.cbut{
     font-family: "caviarDreams";
     width: 100px;
     height: 100px;
-    background-color: rgb(160, 161, 255);
-    border-width: 10px;
+    background: radial-gradient(center, )
+    border-width: 0px;
     border-radius: 50%;
+    font-size: larger;
 }
 button.cbut:hover{
     background-color: rgb(127, 128, 204);
-    transition: 1s;
+    transition: .11s;
     cursor: pointer;
     width: 130px;
     height: 130px;
