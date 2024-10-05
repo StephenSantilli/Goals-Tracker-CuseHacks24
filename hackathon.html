@@ -1,48 +1,73 @@
-<html lang="eng"></html>
-    <!-- comments -->
-    <head>
-        <meta charset= "UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Goal tracker </title>
-        <meta name="website" content="goal tracker website">
-        <link rel="stylesheet" href="stylinghackathon.css" />
-    </head>
-    <body class="caviar">
+<html lang="eng">
 
 
-        <h1>Goal Tracker App</h1>
-        <h2>Welcome</h2>
-        <h3>First, write your name and main goal</h3>
-        <form action="/addGoal">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="maingoal">Goal:</label>
-            <input type="text" id="goal" name="goal"><br><br>
-            <a href="enterTasks.html">
-                <button class="cbut" type="button" onclick="storeInput()">Add to Goals</button>
-            </a>
-            
-          </form>
-        
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-          <script  src="./hackathon.js"></script>
+<!-- comments -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    </body>
-    </head>
-    <body class = caviar>
-    <button class = "cbutstat">
-        <h4>Here you can input your tasks and add a difficulty level</h4>
-        <form action="/addGoal"></form>
-            <label for="task: ">Task:</label>
-            <input type="text" id="task" name="task"><br><br>
-            <label for="Due">Due:</label>
-            <input type="date" id="Due" name="Due"><br><br>
-            <button class="cbut" type="button" onclick="storeInput()">Add task</button>
-    </button>
-    <button class = "cbutstat">
-            <p>On a scale of 1-10, how do you rate the difficulty of this task?</p>
-    </button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal tracker </title>
+    <meta name="website" content="goal tracker website">
+    <link rel="stylesheet" href="stylinghackathon.css" />
+</head>
+
+<body class="caviar">
+
+
+    <h1>Goal Tracker App</h1>
+    <h2>Welcome</h2>
+    <h3>First, write your name and main goal</h3>
+    <form action="/addGoal">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="maingoal">Goal:</label>
+        <input type="text" id="goal" name="goal"><br><br>
+
+
+        <button class="cbut" type="button" onclick="showGoals()">See Goals</button>
+
+
+    </form>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./hackathon.js"></script>
+
+
+
+
+    <h4>Here you can input your tasks and add a difficulty level</h4>
+    <form action="/addGoal"></form>
+    <label for="task: ">Task:</label>
+    <input type="text" id="task" name="task"><br><br>
+    <label for="Due">Due:</label>
+    <input type="date" id="Due" name="Due">><br><br>
+
+    <h5>On a scale of 1-10, how do you rate the difficulty of this task?</h5>
+
+    <button class="cbut" onclick="storeInput(1)">1</button>
+    <br>
+    <button class="cbut" onclick="storeInput(2)">2</button>
+    <br>
+    <button class="cbut" onclick="storeInput(3)">3</button>
+    <br>
+    <button class="cbut" onclick="storeInput(4)">4</button>
+    <br>
+    <button class="cbut" onclick="storeInput(5)">5</button>
+    <br>
+    <button class="cbut" onclick="storeInput(6)">6</button>
+    <br>
+    <button class="cbut" onclick="storeInput(7)">7</button>
+    <br>
+    <button class="cbut" onclick="storeInput(8)">8</button>
+    <br>
+    <button class="cbut" onclick="storeInput(9)">9</button>
+    <br>
+    <button class="cbut" onclick="storeInput(10)">10</button>
+
+
 </body>
+
 </html>
