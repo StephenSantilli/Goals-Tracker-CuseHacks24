@@ -12,5 +12,14 @@ for (let i = 0; i < buttons.length; i++ ){
 const points = buttonValue * 10; */
 
 
-const selectedValue = dropdown.value;
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.getElementsByClassName("cbut");
+    const dropdown = dropdowns[0];
+    dropdown.addEventListener("change", function() {
+        const selectedValue = dropdown.value;
+
+    });
+});
 const points = selectedValue * 10
