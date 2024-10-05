@@ -9,16 +9,20 @@
     text-align: center;
 }
 
-.cbut{
+button.cbut{
     font-family: "caviarDreams";
     width: 100px;
     height: 100px;
     background-color: rgb(160, 161, 255);
-    border-width: 0px;
+    border-width: 10px;
     border-radius: 50%;
 }
-.cbut:hover{
+button.cbut:hover{
     background-color: rgb(127, 128, 204);
+    transition: 1s;
+    cursor: pointer;
+    width: 130px;
+    height: 130px;
 }
 
 input{
