@@ -12,14 +12,25 @@ for (let i = 0; i < buttons.length; i++ ){
 const points = buttonValue * 10; */
 
 
-
+let totalPoints = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
     const dropdowns = document.getElementsByClassName("cbut");
     const dropdown = dropdowns[0];
     dropdown.addEventListener("change", function() {
-        const selectedValue = dropdown.value;
+        const selectedValue = parseInt(dropdown.value);
+        let points = 0;
+        totalPoints += selectedValue * 10;
 
+        console.log("Total Points: ", totalPoints)
+
+        totalPointDisplay.textContent = "Total Points: " + totalPoints;
     });
-    const points = selectedValue * 10
+    
 });
+
+
+
+// need to add all points from all tasks together
+
+for(let i = 0; i < )
