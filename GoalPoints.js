@@ -31,9 +31,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
-
-
-
-// need to add all points from all tasks together
-
-for(let i = 0; i < )
