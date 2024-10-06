@@ -18,9 +18,7 @@ app.get('/', (req, res) => {
 
 })
 
-app.use(express.json())
-app.post("/addGoal", urlencodedParser, function (req, res) {
-
+function createNewGoals() {
     if (!fs.existsSync('./goals.json')) {
 
         let base = {
@@ -72,10 +70,17 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
             }
         }
 
-            fs.writeFileSync("./goals.json", base)
-
+        fs.writeFile("./goals.json", JSON.stringify(base), () => {
+            console.log(base)
+        })
 
     }
+}
+
+app.use(express.json())
+app.post("/addGoal", urlencodedParser, function (req, res) {
+
+    createNewGoals();
 
     let goalsList = require('./goals.json')
 
@@ -123,6 +128,7 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
 
 app.get('/getGoals/:name', (req, res) => {
 
+    createNewGoals();
 
     let goalsList = require('./goals.json')
 
@@ -136,6 +142,7 @@ app.get('/getGoals/:name', (req, res) => {
 
 app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
 
+    createNewGoals();
     let goalsList = require('./goals.json')
 
 
