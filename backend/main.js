@@ -94,10 +94,10 @@ app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
 
     console.log("settaskdone")
     for (let i = 0; i < goalsList.Users[name].length; i++) {
-        if (goalsList.Users[name][i].goal === goal) {
+        if (goalsList.Users[name][i].goal == goal) {
 
-            for (let j = 0; j < goalsList.Users[name].length; j++) {
-                if (goalsList.Users[name][i].tasks[j].task === task) {
+            for (let j = 0; j < goalsList.Users[name][i].tasks.length; j++) {
+                if (goalsList.Users[name][i].tasks[j].task == task) {
                     console.log("Setting: " + done)
                     goalsList.Users[name][i].tasks[j].done = done;
                     console.log(goalsList.Users[name][i].tasks[j].done)
