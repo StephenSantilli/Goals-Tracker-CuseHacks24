@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Total Points: ", totalPoints)
 
         if (totalPointDisplay){
-            totalPointDisplay.textContent = "Total Points: " + totalPoints;
+            return totalPointDisplay.textContent = "Total Points: " + totalPoints;
         }
         
     });
