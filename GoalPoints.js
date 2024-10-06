@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (totalPointDisplay){
             return totalPointDisplay.textContent = "Total Points: " + totalPoints;
+            document.getElementById("points").innerHTML = totalPoints;
         }
         
     });
