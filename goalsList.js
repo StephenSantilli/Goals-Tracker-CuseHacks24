@@ -65,5 +65,5 @@ function setDone(path) {
         url: "/setTaskDone/" + path,
         contentType: "application/json"
     });
-    
+
 }
