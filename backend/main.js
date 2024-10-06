@@ -21,6 +21,59 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.post("/addGoal", urlencodedParser, function (req, res) {
 
+    if (!fs.existsSync('./goals.json')) {
+
+        let base = {
+            "Users": {
+                "test": [
+                    {
+                        "goal": "Test Goal 1",
+                        "tasks": [
+                            {
+                                "task": "Test Task 1",
+                                "date": "2035-10-05",
+                                "difficulty": 1,
+                                "done": "true"
+                            }, {
+                                "task": "Test Task 2",
+                                "date": "2035-10-06",
+                                "difficulty": 2,
+                                "done": "false"
+                            }, {
+                                "task": "Test Task 3",
+                                "date": "2035-10-07",
+                                "difficulty": 3,
+                                "done": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "goal": "Test Goal 2",
+                        "tasks": [
+                            {
+                                "task": "Test Task 4",
+                                "date": "2034-10-05",
+                                "difficulty": 4,
+                                "done": "true"
+                            }, {
+                                "task": "Test Task 5",
+                                "date": "2034-10-06",
+                                "difficulty": 5,
+                                "done": "false"
+                            }, {
+                                "task": "Test Task 6",
+                                "date": "2034-10-07",
+                                "difficulty": 6,
+                                "done": "true"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    }
+
     let goalsList = require('./goals.json')
 
     req = req.body;
@@ -68,7 +121,7 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
 app.get('/getGoals/:name', (req, res) => {
 
 
-let goalsList = require('./goals.json')
+    let goalsList = require('./goals.json')
 
     let name = req.params.name
 
@@ -97,7 +150,7 @@ app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
         if (goalsList.Users[name][i].goal == goal) {
 
             for (let j = 0; j < goalsList.Users[name][i].tasks.length; j++) {
-                
+
                 if (goalsList.Users[name][i].tasks[j].task == task) {
                     console.log("Setting: " + done)
                     goalsList.Users[name][i].tasks[j].done = done;
