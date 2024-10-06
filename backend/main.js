@@ -155,9 +155,6 @@ app.post('/setTaskDone/:name/:goal/:task/:done', async (req, res) => {
 
     let goalsList =  await createNewGoals();
 
-
-
-
     let name = req.params.name
     let goal = req.params.goal
     let task = req.params.task

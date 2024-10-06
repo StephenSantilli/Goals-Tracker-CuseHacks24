@@ -16,6 +16,7 @@ request.done((res) => {
 
     let data = JSON.parse(res)
 
+    let boxCount = 0;
     for (let i = 0; i < data.length; i++) {
         let g = data[i];
 
@@ -45,10 +46,10 @@ request.done((res) => {
             dueCell.innerHTML = t.date
             difficultyCell.innerHTML = t.difficulty
             let doneBox = document.createElement("input")
-            doneBox.setAttribute("id", "doneBox" + j)
+            doneBox.setAttribute("id", "doneBox" + (boxCount++))
             doneBox.setAttribute("type", "checkbox")
             doneCell.appendChild(doneBox)
-            $("#doneBox" + j).prop("checked", t.done == "true")
+            $("#doneBox" + (boxCount - 1)).prop("checked", t.done == "true")
             doneBox.setAttribute("onclick", "setDone('" + (urlParams.get("name")) + "/" + (g.goal) + "/" + t.task + "/" + (!doneBox.checked) + "')")
 
         }
