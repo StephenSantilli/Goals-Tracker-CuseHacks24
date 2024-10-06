@@ -71,9 +71,9 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
                 ]
             }
         }
-        fs.createFile("./goals.json", () => {
+
             fs.writeFileSync("./goals.json", base)
-        })
+
 
     }
 
