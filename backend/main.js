@@ -19,70 +19,80 @@ app.get('/', (req, res) => {
 })
 
 function createNewGoals() {
-    if (!fs.existsSync('./goals.json')) {
+    return new Promise((res, rej) => {
 
-        let base = {
-            "Users": {
-                "test": [
-                    {
-                        "goal": "Test Goal 1",
-                        "tasks": [
-                            {
-                                "task": "Test Task 1",
-                                "date": "2035-10-05",
-                                "difficulty": 1,
-                                "done": "true"
-                            }, {
-                                "task": "Test Task 2",
-                                "date": "2035-10-06",
-                                "difficulty": 2,
-                                "done": "false"
-                            }, {
-                                "task": "Test Task 3",
-                                "date": "2035-10-07",
-                                "difficulty": 3,
-                                "done": "true"
-                            }
-                        ]
-                    },
-                    {
-                        "goal": "Test Goal 2",
-                        "tasks": [
-                            {
-                                "task": "Test Task 4",
-                                "date": "2034-10-05",
-                                "difficulty": 4,
-                                "done": "true"
-                            }, {
-                                "task": "Test Task 5",
-                                "date": "2034-10-06",
-                                "difficulty": 5,
-                                "done": "false"
-                            }, {
-                                "task": "Test Task 6",
-                                "date": "2034-10-07",
-                                "difficulty": 6,
-                                "done": "true"
-                            }
-                        ]
-                    }
-                ]
+
+
+        if (!fs.existsSync('./goals.json')) {
+            console.log("Creating new goals.json")
+            let base = {
+                "Users": {
+                    "test": [
+                        {
+                            "goal": "Test Goal 1",
+                            "tasks": [
+                                {
+                                    "task": "Test Task 1",
+                                    "date": "2035-10-05",
+                                    "difficulty": 1,
+                                    "done": "true"
+                                }, {
+                                    "task": "Test Task 2",
+                                    "date": "2035-10-06",
+                                    "difficulty": 2,
+                                    "done": "false"
+                                }, {
+                                    "task": "Test Task 3",
+                                    "date": "2035-10-07",
+                                    "difficulty": 3,
+                                    "done": "true"
+                                }
+                            ]
+                        },
+                        {
+                            "goal": "Test Goal 2",
+                            "tasks": [
+                                {
+                                    "task": "Test Task 4",
+                                    "date": "2034-10-05",
+                                    "difficulty": 4,
+                                    "done": "true"
+                                }, {
+                                    "task": "Test Task 5",
+                                    "date": "2034-10-06",
+                                    "difficulty": 5,
+                                    "done": "false"
+                                }, {
+                                    "task": "Test Task 6",
+                                    "date": "2034-10-07",
+                                    "difficulty": 6,
+                                    "done": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
+
+            fs.writeFile("./goals.json", JSON.stringify(base), () => {
+                console.log(JSON.stringify(base))
+                res(require('./goals.json'))
+            })
+
+        } else {
+            res(require('./goals.json'))
         }
 
-        fs.writeFile("./goals.json", JSON.stringify(base), () => {
-            console.log(base)
-        })
+    })
 
-    }
 }
 
 app.use(express.json())
-app.post("/addGoal", urlencodedParser, function (req, res) {
+app.post("/addGoal", urlencodedParser, async function (req, res) {
 
-    createNewGoals();
 
-    let goalsList = require('./goals.json')
+    let goalsList = await createNewGoals();
+
 
     req = req.body;
     let goal = {
@@ -126,11 +136,12 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
 
 });
 
-app.get('/getGoals/:name', (req, res) => {
+app.get('/getGoals/:name', async (req, res) => {
 
-    createNewGoals();
+    let goalsList = await createNewGoals();
 
-    let goalsList = require('./goals.json')
+
+
 
     let name = req.params.name
 
@@ -140,10 +151,11 @@ app.get('/getGoals/:name', (req, res) => {
 
 })
 
-app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
+app.post('/setTaskDone/:name/:goal/:task/:done', async (req, res) => {
 
-    createNewGoals();
-    let goalsList = require('./goals.json')
+    let goalsList =  await createNewGoals();
+
+
 
 
     let name = req.params.name
