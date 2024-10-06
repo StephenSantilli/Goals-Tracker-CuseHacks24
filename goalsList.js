@@ -2,7 +2,6 @@ const queryString = window.location.search;
 
 const urlParams = new URLSearchParams(queryString);
 
-const list = document.getElementById("list")
 
 
 let request = $.ajax({
@@ -11,6 +10,9 @@ let request = $.ajax({
 });
 
 request.done((res) => {
+
+    const listE = document.getElementById("list")
+
 
     let data = JSON.parse(res)
 
@@ -45,12 +47,22 @@ request.done((res) => {
             let doneBox = document.createElement("input")
             doneBox.setAttribute("id", "doneBox" + j)
             doneBox.setAttribute("type", "checkbox")
-            console.log(t.done)
             doneCell.appendChild(doneBox)
-            $("#doneBox" + j).prop("checked", t.done == "false")
+            $("#doneBox" + j).prop("checked", t.done == "true")
+            doneBox.setAttribute("onclick", "setDone('" + (urlParams.get("name")) + "/" + (g.goal) + "/" + t.task + "/" + (!doneBox.checked) + "')")
 
         }
 
     }
 
 })
+
+function setDone(path) {
+    console.log(path)
+    let req = $.ajax({
+        type: "POST",
+        url: "/setTaskDone/" + path,
+        contentType: "application/json"
+    });
+    
+}

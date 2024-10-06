@@ -9,7 +9,6 @@ let bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-let goalsList = require('./goals.json')
 
 
 app.listen(port, "127.0.0.1");
@@ -21,6 +20,8 @@ app.get('/', (req, res) => {
 
 app.use(express.json())
 app.post("/addGoal", urlencodedParser, function (req, res) {
+
+    let goalsList = require('./goals.json')
 
     req = req.body;
     let goal = {
@@ -65,7 +66,10 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
 });
 
 app.get('/getGoals/:name', (req, res) => {
-    
+
+
+let goalsList = require('./goals.json')
+
     let name = req.params.name
 
     console.log(JSON.stringify(goalsList.Users[name]))
@@ -75,21 +79,28 @@ app.get('/getGoals/:name', (req, res) => {
 })
 
 app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
-    
+
+    let goalsList = require('./goals.json')
+
+
     let name = req.params.name
     let goal = req.params.goal
     let task = req.params.task
     let done = req.params.done
+    console.log("Name: " + name);
+    console.log("Goal: " + goal);
+    console.log("Task: " + task);
+    console.log("Done: " + done);
 
-
+    console.log("settaskdone")
     for (let i = 0; i < goalsList.Users[name].length; i++) {
         if (goalsList.Users[name][i].goal === goal) {
-            
+
             for (let j = 0; j < goalsList.Users[name].length; j++) {
                 if (goalsList.Users[name][i].tasks[j].task === task) {
-                    
-                    goalsList.Users[name][i].tasks[j].done === done;
-
+                    console.log("Setting: " + done)
+                    goalsList.Users[name][i].tasks[j].done = done;
+                    console.log(goalsList.Users[name][i].tasks[j].done)
                     break;
                 }
             }
@@ -98,10 +109,13 @@ app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
         }
     }
 
-    if (!found)
-        (goalsList.Users[req.name]).push(goal);
+    fs.writeFile("./backend/goals.json", JSON.stringify(goalsList), () => {
 
-    res.send(JSON.stringify(goalsList.Users[name]))
+        console.log("file written")
+
+        res.sendStatus(200)
+
+    })
 
 })
 
