@@ -56,7 +56,7 @@ app.post("/addGoal", urlencodedParser, function (req, res) {
         (goalsList.Users[req.name]).push(goal);
 
 
-    fs.writeFile("./backend/goals.json", JSON.stringify(goalsList), () => {
+    fs.writeFile("./goals.json", JSON.stringify(goalsList), () => {
 
         console.log("file written")
 
@@ -97,6 +97,7 @@ app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
         if (goalsList.Users[name][i].goal == goal) {
 
             for (let j = 0; j < goalsList.Users[name][i].tasks.length; j++) {
+                
                 if (goalsList.Users[name][i].tasks[j].task == task) {
                     console.log("Setting: " + done)
                     goalsList.Users[name][i].tasks[j].done = done;
@@ -109,7 +110,7 @@ app.post('/setTaskDone/:name/:goal/:task/:done', (req, res) => {
         }
     }
 
-    fs.writeFile("./backend/goals.json", JSON.stringify(goalsList), () => {
+    fs.writeFile("./goals.json", JSON.stringify(goalsList), () => {
 
         console.log("file written")
 
