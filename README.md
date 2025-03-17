@@ -1,4 +1,4 @@
-# infosecular
+# Goals Tracker - CuseHacks 2024
 
 # Sources
 https://confetti.js.org/ for confetti effect.
